@@ -7,6 +7,10 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
+const db = require('./db/connection.js');
+
+//db connection
+db.connection;
 
 //settings
 app.set('port', process.env.PORT || 3000);
