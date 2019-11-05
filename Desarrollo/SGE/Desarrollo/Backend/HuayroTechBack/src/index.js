@@ -8,6 +8,8 @@ const path = require('path');
 
 const app = express();
 const db = require('./db/connection.js');
+const user = require('./routes/user.js');
+const event = require('./routes/event.js');
 
 //db connection
 db.connection;
@@ -50,6 +52,10 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+//routes
+app.use(user);
+app.use(event);
 
 app.listen(3000, () => {
     console.log('Running in port', app.get('port'));
