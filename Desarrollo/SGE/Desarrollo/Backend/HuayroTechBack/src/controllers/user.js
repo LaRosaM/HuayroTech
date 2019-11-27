@@ -18,18 +18,16 @@ async function editUser(req, res, next) {
     const duplicateEmail = await User.find({ email: newUser.email.trim() });
     const validPhone = /^[9][0-9]{8}$/.test(newUser.phone);
     const { userId } = req.params;
-    console.log(passport.loggedUser.email);
     if (newUser.firstName.trim().length == 0 || newUser.lastName.trim().length == 0 || newUser.email.trim().length == 0 || newUser.gender.trim().length == 0 || newUser.phone.trim().length == 0 || newUser.birthday == null) {
         res.status(500).json({ text: 'Complete todos los campos' });
     } else if (!validEmail) {
         res.status(500).json({ text: 'Ingrese un email válido' });
-    } else if (duplicateEmail.length > 0 && newUser.email != passport.loggedUser.email) {
+    } else if (duplicateEmail.length > 0 && newUser.email != req.user.email) {
         res.status(500).json({ text: 'Ya se encuentra registrado este email' });
     } else if (!validPhone) {
         res.status(500).json({ text: 'Ingrese un celular válido' });
     } else {
         await User.findByIdAndUpdate(userId, newUser);
-        passport.loggedUser.email = newUser.email;
         res.status(200).json({ text: 'Usuario actualizado correctamente' });
     }
 }
@@ -44,7 +42,7 @@ async function register(req, res, next) {
         res.status(500).json({ text: 'Complete todos los campos' });
     } else if (!validEmail) {
         res.status(500).json({ text: 'Ingrese un email válido' });
-    } else if (duplicateEmail) {
+    } else if (duplicateEmail.length > 0) {
         res.status(500).json({ text: 'Ya se encuentra registrado este email' });
     } else if (!validPassword) {
         res.status(500).json({ text: 'Ingrese una contraseña válida' });

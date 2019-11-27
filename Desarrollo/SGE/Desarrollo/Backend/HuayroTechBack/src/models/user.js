@@ -4,12 +4,14 @@ const Schema = mongoose.Schema;
 //const timeZone = require('mongoose-timezone');
 
 const userSchema = new Schema({
+    googleId: { type: String, required: false },
+    facebookId: { type: String, required: false },
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    email: { type: String, required: true },
-    password: { type: String, required: true },
-    gender: { type: String, required: true },
-    phone: { type: String, required: true },
+    email: { type: String, required: false },
+    password: { type: String, required: false },
+    gender: { type: String, required: false },
+    phone: { type: String, required: false },
     birthday: { type: String, default: Date.now },
     creationDate: { type: Date, default: Date.now }
 });
