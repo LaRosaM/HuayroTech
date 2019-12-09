@@ -5,29 +5,28 @@ const User = require('../models/user');
 const FacebookPassport = new FacebookStrategy({
     clientID: keys.FACEBOOK.clientID,
     clientSecret: keys.FACEBOOK.clientSecret,
-    callbackURL: '/auth/facebook/redirect'
+    callbackURL: '/auth/facebook/redirect',
+    profileFields: ['name', 'birthday', 'emails', 'gender']
 },
     function (token, tokenSecret, profile, done) {
         User.findOne({ facebookId: profile.id }, async function (err, user) {
+            console.log(profile);
             if (err)
                 return done(err);
-
             if (user) {
-
-                // if a user is found, log them in
-                console.log(profile);
                 return done(null, user);
             } else {
                 // if the user isnt in our database, create a new user
                 const newUser = new User();
 
                 // set all of the relevant information
-                //newUser.google.id = profile.id;
-                //newUser.google.token = token;
                 newUser.facebookId = profile.id
-                newUser.firstName = profile.displayName.split(' ')[0];
-                newUser.lastName = profile.displayName.split(' ')[1];
-                //newUser.email = profile._json.email;
+                newUser.firstName = profile.name.givenName
+                newUser.lastName = profile.name.familyName;
+                newUser.email = profile.emails[0].value;
+                newUser.gender = (profile.gender === 'male' ? 'Masculino' : 'Femenino');
+                const birthdayFormat = profile._json.birthday.split("/");
+                newUser.birthday = birthdayFormat[2].concat("-", birthdayFormat[0], "-", birthdayFormat[1]);
 
                 // save the user
                 await newUser.save();

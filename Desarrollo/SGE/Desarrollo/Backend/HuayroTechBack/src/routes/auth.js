@@ -16,7 +16,7 @@ router.get('/auth/check', (req, res) => {
 
 //sign in with google
 router.get('/auth/google', passport.authenticate('google', {
-    scope: ['profile', 'email']
+    scope: ['email', 'profile']
 }));
 
 //redirect url
@@ -34,7 +34,7 @@ router.get('/logout', function (req, res, next) {
 
 /**************************************************************************************************/
 
-router.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_birthday', 'user_gender'] }));
+router.get('/auth/facebook', passport.authenticate('facebook'));
 
 //redirect url
 router.get('/auth/facebook/redirect', passport.authenticate('facebook', { failureRedirect: '/login' }),

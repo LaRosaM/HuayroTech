@@ -11,9 +11,7 @@ const GooglePassport = new GoogleStrategy({
         User.findOne({ googleId: profile.id }, async function (err, user) {
             if (err)
                 return done(err);
-
             if (user) {
-
                 // if a user is found, log them in
                 return done(null, user);
             } else {
@@ -21,12 +19,10 @@ const GooglePassport = new GoogleStrategy({
                 const newUser = new User();
 
                 // set all of the relevant information
-                //newUser.google.id = profile.id;
-                //newUser.google.token = token;
                 newUser.googleId = profile.id
                 newUser.firstName = profile.name.givenName;
                 newUser.lastName = profile.name.familyName;
-                newUser.email = profile._json.email;
+                newUser.email = profile.emails[0].value;
 
                 // save the user
                 await newUser.save();
