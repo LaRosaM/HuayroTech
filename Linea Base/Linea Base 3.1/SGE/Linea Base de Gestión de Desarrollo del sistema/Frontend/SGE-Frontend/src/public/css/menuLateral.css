@@ -1,0 +1,117 @@
+.menu-lateral {
+    position: relative;
+    /*width: 28%;*/
+    width: calc(0% + 22px);
+    transition: width 0.2s;
+    transition-timing-function: linear;
+    z-index: 6;
+}
+
+.visible {
+    width: 408px;
+}
+
+.menu {
+    position: absolute;
+    width: calc(100% - 22px);
+    height: 100vh;
+    background: #ffffff;
+    overflow-y: auto;
+    margin: 0%;
+    padding: 0px;
+}
+
+.menu-lateral .menu::-webkit-scrollbar {
+    background: #fff;
+    width: 7px;
+}
+.menu-lateral .menu::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border-radius: 15px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.menu-lateral .menu::-webkit-scrollbar-thumb:hover {
+    background: rgb(177, 145, 145);
+}
+
+@media screen and (max-width:750px) {
+    .visible {
+        width: 70%;
+    }
+}
+
+.btn-trigger {
+    position: absolute;
+    display: block;
+    width: 22px;
+    height: 50px;
+    right: 0;
+    top: 20px;
+    background: #ccc;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(184, 182, 182);
+    background: rgba(255, 255, 255, .9);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-trigger i {
+    /* position: absolute;
+    top: 25%;
+    left: 25%;*/
+    display: block;
+    margin-top: 60%;
+    font-size: 22px;
+}
+
+/*CONTENIDO DEL MENU LATERAL*/
+
+.menu-lateral .menu .contenido {
+    padding: 0px;
+    margin-top: 0px;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background: #fff;
+}
+
+.menu-lateral .menu .contenido .header-contenido {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 240px;
+}
+
+.menu-lateral .menu .contenido .header-contenido h1 {
+    background: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 15px;
+    color: #351f6e;
+    position: absolute;
+    top: 0px;
+    left: 5%;
+    z-index: 7;
+    width: 80%;
+    text-align: center;
+    -webkit-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.75);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menu-lateral .menu .contenido .header-contenido img {
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: 0%;
+    z-index: 6;
+}
+
+.menu-lateral .menu .contenido .descripcion-contenido {
+    margin-top: 250px;
+    padding: 10px;
+    padding-top: 0px;
+}
