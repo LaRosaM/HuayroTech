@@ -10,7 +10,6 @@ const FacebookPassport = new FacebookStrategy({
 },
     function (token, tokenSecret, profile, done) {
         User.findOne({ facebookId: profile.id }, async function (err, user) {
-            console.log(profile);
             if (err)
                 return done(err);
             if (user) {

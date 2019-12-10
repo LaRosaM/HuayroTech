@@ -94,11 +94,19 @@ var markers = [];
 var map;
 var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
 var indexPosActual = 0;
+<<<<<<< HEAD
+var drop = document.getElementById('drop');
+
+
+function initMap() {
+	
+=======
 //var drop = document.getElementById('drop');
 
 
 function initMap() {
 	datos();
+>>>>>>> LaRosaM
 	if (navigator.geolocation) {
 		
 		navigator.geolocation.getCurrentPosition((position) => {
@@ -267,6 +275,11 @@ function deleteMarkers() {
 /*
 drop.addEventListener("click", function(){
 
+<<<<<<< HEAD
+drop.addEventListener("click", function(){
+
+=======
+>>>>>>> LaRosaM
 	clearMarkers();
 	
 	for (var i = 0; i < neighborhoods.length; i++) {
@@ -276,10 +289,17 @@ drop.addEventListener("click", function(){
 		console.log(obj);
 	}
 });
+<<<<<<< HEAD
+
+function addMarkerWithTimeout(neighborhood, timeout) {
+	window.setTimeout(function () {
+		console.log(neighborhoods);
+=======
 */
 function addMarkerWithTimeout(neighborhood, timeout) {
 	window.setTimeout(function () {
 		//console.log(neighborhoods);
+>>>>>>> LaRosaM
 		addMarker(neighborhood, "evento", true);
 	}, timeout);
 }
