@@ -12,7 +12,7 @@ router.get('/events', event.getEvents);
 router.post('/event', event.postEvent);
 
 /* EDIT event */
-router.get('/event/:eventId', event.editEvent);
+router.put('/event/:eventId', event.editEvent);
 
 /* DELETE event */
 router.post('/event/:eventId', event.deleteEvent);

@@ -89,86 +89,304 @@
     />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/menuLateral.css" />
+    <link rel="stylesheet" href="/css/popup.css" />
 
     <script
       src="https://kit.fontawesome.com/2d08ab27d5.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <input type="hidden" id="posActual" name="posActual"></input>
     <div class="menu-lateral" id="menuToggle">
-      <a href="#" id="iconToggle" class="btn-trigger"
-        ><i class="fa fa-caret-left"></i
-      ></a>
-      <div class="menu">
-        <div class="contenido">
-          <div class="header-contenido">
-            <h1>Reunión de organización HuayroTech</h1>
-            <img type="image/jpg" src="/img/evento.jpg" alt="asd" />
-          </div>
-          <div class="descripcion-contenido">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatum accusamus reiciendis vero amet consequatur et ex?
-              Similique soluta facilis molestiae inventore, odio aperiam odit
-              ipsa beatae repellat voluptas fugit ab et dolores sapiente.
-              Officiis amet harum corporis fuga repudiandae dolorem
-              reprehenderit distinctio, a qui tempore dolore, earum laudantium
-              cum iste, voluptate commodi? Nostrum quam laborum consectetur
-              exercitationem animi distinctio ipsum facere. Enim suscipit
-              eligendi voluptatum mollitia ex optio incidunt sint exercitationem
-              at? Omnis excepturi, temporibus, voluptas, laboriosam qui tenetur
-              quo consequatur harum ab natus distinctio. Atque delectus deleniti
-              vel, ad, minus, eligendi sunt iste dolor explicabo veritatis illum
-              perferendis. Sed sunt deleniti molestiae et ex reprehenderit sint
-              incidunt, facere consequatur, autem error delectus nam a repellat.
-              Inventore rerum accusantium magni quibusdam molestias minus ipsum,
-              praesentium debitis sequi officia quis adipisci placeat tenetur
-              facilis odio beatae voluptates, veniam, fugit quasi eaque iusto
-              corrupti recusandae modi aliquam! Quas, quia harum dolor illum
-              quod dicta? Fuga fugit at sapiente? Quo at magni necessitatibus ut
-              illo reiciendis commodi culpa assumenda, obcaecati omnis dolorem,
-              inventore ipsa. Magnam quidem libero, accusantium nesciunt neque
-              magni beatae? Voluptas cum excepturi doloribus perspiciatis
-              ratione laboriosam ab omnis, id itaque vitae voluptatum, maiores
-              animi numquam perferendis praesentium fuga reiciendis quam nulla
-              nihil. Nihil hic necessitatibus, libero expedita incidunt minima?
-              Accusantium earum expedita sed soluta, repellendus amet ab
-              necessitatibus ratione quod tenetur rerum vitae at recusandae
-              reiciendis sint dolor eos aliquam quis. Inventore dolor minus,
-              nobis sit a quam, in dolores quo aliquid natus molestias libero
-              aut voluptatem voluptate sequi porro maxime voluptatibus mollitia
-              commodi tempora! Explicabo natus, qui, laudantium sit vero ducimus
-              fugiat quae necessitatibus dolor laboriosam sapiente consectetur
-              labore voluptates ratione ullam odio commodi repudiandae eius!
-              Quaerat mollitia, porro minus quae illo officiis. Cumque, maxime
-              voluptatibus voluptatum alias modi placeat obcaecati officia
-              molestiae nemo dolores laboriosam sed magnam pariatur corrupti
-              asperiores quia illo facilis. Reiciendis, eius laborum iste unde
-              adipisci fugit, magni omnis ducimus dolore numquam molestias id
-              quisquam facere modi quia sit sint soluta! Harum sed quidem
-              assumenda voluptatem vel. Enim harum magni ipsum illo mollitia
-              minima voluptate voluptatibus sapiente laborum voluptatem,
-              possimus est placeat excepturi modi perspiciatis!
-            </p>
+        <a href="#" id="iconToggle" class="btn-trigger" onClick={this.handleClick.bind(this)}><i class="fa fa-caret-left"></i></a>
+        <div class="menu">
+            <div class="contenido">
+                <div class="header-contenido">
+                    <h1 class="evento">Reunión de organización HuayroTech  <a href="#" class="visible" id="abrir-popup"><i class="fa fa-pencil-alt"></i></a></h1>
+                    <img type="image/jpg" src="/img/evento.jpg" alt="asd"></img>
+                </div>
+
+                <div class="descripcion-contenido">
+
+                    <h1>Reunión de organización HuayroTech</h1>
+
+                    <div class="score">
+                        <p class="puntaje">4.0</p>
+                        <form>
+                            <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"></input>
+                                <label htmlFor="radio1">★</label>
+                                <input id="radio2" type="radio" name="estrellas" value="4"></input>
+                                <label htmlFor="radio2">★</label>
+                                <input id="radio3" type="radio" name="estrellas" value="3"></input>
+                                <label htmlFor="radio3">★</label>
+                                <input id="radio4" type="radio" name="estrellas" value="2"></input>
+                                <label htmlFor="radio4">★</label>
+                                <input id="radio5" type="radio" name="estrellas" value="1"></input>
+                                <label htmlFor="radio5">★</label>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="descripcion">
+                        <h1>Descúbrelo</h1>
+                        <p>Lorem ipsum dolor srrupti asperiores quia illo facilis. Reiciendis,
+                            eius laborum iste unde adipisci fugit, magni omnis ducimus dolore numquam molestias id
+                            quisquam facere modi quia sit sint soluta! Harum sed quidem assumenda voluptatem vel. Enim
+                            harum magni ipsum illo mollitia minima voluptate voluptatibus sapiente laborum voluptatem,
+                possimus est placeat excepturi modi perspiciatis!</p>
+                    </div>
+                    <div class="datos">
+                        <div class="data">
+                            <i class="fa fa-map-marker-alt"></i>
+                            <p>Avenida S/N, Av. República de Venezuela, Bellavista</p>
+                        </div>
+                        <div class="data">
+                            <i class="fa fa-globe"></i>
+                            <p>-12.058841472227158, -77.08187032245993</p>
+                        </div>
+                        <div class="data">
+                            <i class="fa fa-file-alt"></i>
+                            <p>disamar.mil.pe</p>
+                        </div>
+                        <div class="data">
+                            <i class="fa fa-phone-alt"></i>
+                            <p>(01) 2071600</p>
+                        </div>
+                        <div class="data">
+                            <i class="fa fa-phone-alt"></i>
+                            <p>sáb., 23 dic. 18:00–dom</p>
+                        </div>
+                    </div>
+                    <div class="comentarios">
+                        <h1>Todas las reseñas</h1>
+                        <div class="resena">
+                            <div class="nombre">
+                                <p>Trasgus Hide</p>
+                                <p>29, Dic. 2019</p>
+                            </div>
+                            <div class="comentario">
+                                <p>Es de vergüenza e indignante que la farmacia del hospital esté desabastecida, tantos
+                                    años
+                                    de un marino entregando su vida a la patria para que cuando llegue su retiro y
+                                    necesite
+                        ciertos medicamentos</p>
+                            </div>
+                        </div>
+                        <div class="resena">
+                            <div class="nombre">
+                                <p>Trasgus Hide</p>
+                                <p>29, Dic. 2019</p>
+                            </div>
+                            <div class="comentario">
+                                <p>Es de vergüenza e indignante que la farmacia del hospital esté desabastecida, tantos
+                                    años
+                                    de un marino entregando su vida a la patria para que cuando llegue su retiro y
+                                    necesite
+                        ciertos medicamentos</p>
+                            </div>
+                        </div>
+                        <div class="resena">
+                            <div class="nombre">
+                                <p>Trasgus Hide</p>
+                                <p>29, Dic. 2019</p>
+                            </div>
+                            <div class="comentario">
+                                <p>Es de vergüenza e indignante que la farmacia del hospital esté desabastecida, tantos
+                                    años
+                                    de un marino entregando su vida a la patria para que cuando llegue su retiro y
+                                    necesite
+                        ciertos medicamentos</p>
+                            </div>
+                        </div>
+                        <div class="resena">
+                            <div class="nombre">
+                                <p>Trasgus Hide</p>
+                                <p>29, Dic. 2019</p>
+                            </div>
+                            <div class="comentario">
+                                <p>Es de vergüenza e indignante que la farmacia del hospital esté desabastecida, tantos
+                                    años
+                                    de un marino entregando su vida a la patria para que cuando llegue su retiro y
+                                    necesite
+                        ciertos medicamentos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btnn">ASISTIR</a>
+
+                    <a href="#" id="abrir-popup-crear" class="crear">Crear mi evento <i class="fa fa-pencil-alt"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand ml-5" href="/">HuayroTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto" style="margin-right: 5rem;">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Perfil
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/profile">Ver perfil</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+    <div id="floating-panel">
+        <a id="drop" class="btn-floating">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="change2"><i class="fa fa-search-location"></i> eventos</span>
+        </a>
+      </div>
+    <div id="map" ></div>
+
+    <div class="overlay" id="overlay">
+        <div class="popup" id="popup">
+            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+            <div class="container1">
+                <div class="container">
+                    <h1>Editar Campos</h1>
+                    <div class="">
+                        <form action="/event/eventId" method="PUT">
+                          <div class="contenedor-inputs">
+                            <label htmlFor="nombre_evento2">Nombre del evento</label>
+                            <input type="text" id="nombre_evento2" name="title"></input>
+        
+        
+                            <label htmlFor="descripcion_evento2">Descripción</label>
+                            <input type="text" id="descripcion_evento2" name="description"></input>
+        
+        
+                            <label htmlFor="distrito_evento2">Distrito</label>
+                            <input type="text" id="distrito_evento2" name="district"></input>
+        
+        
+                            <label htmlFor="calle_evento2">Calle</label>
+                            <input type="text" id="calle_evento2" name="street"></input>
+        
+        
+                            <label htmlFor="inicio_evento2">Fecha de inicio</label>
+                            <input type="text" id="inicio_evento2" name="startDate"></input>
+        
+        
+                            <label htmlFor="fin_evento2">Fecha fin</label>
+                            <input type="text" id="fin_evento2" name="endDate"></input>
+        
+        
+                            <label htmlFor="precio_evento2">Precio</label>
+                            <input type="text" id="precio_evento2" name="price"></input>
+        
+        
+                            <label htmlFor="capacidad_evento2">Capacidad Máxima</label>
+                            <input type="text" id="capacidad_evento2" name="maxCapacity"></input>
+        
+        
+                            <label htmlFor="telefono_evento2">Teléfono para contacto</label>
+                            <input type="text" id="telefono_evento2" name="phoneContact"></input>
+        
+        
+                            <label htmlFor="coordenada_X_evento2">Coordenada X del lugar del evento</label>
+                            <input type="text" id="coordenada_X_evento2" name="xCoordinate"></input>
+        
+        
+                            <label htmlFor="coordenada_Y_evento2">Coordenada Y del lugar del evento</label>
+                            <input type="text" id="coordenada_Y_evento2" name="yCoordinate"></input>
+        
+        
+                            <input type="submit" class="btn-submit"></input>
+        
+                          </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay-crear">
+        <div class="popup" id="popup-crear">
+          <a href="#" id="btn-cerrar-popup-crear" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+          <div class="container1">
+            <div class="container">
+              <h1>Crear Evento</h1>
+              <div class="">
+                <form action="/event" method="POST">
+                  <div class="contenedor-inputs">
+                    <label htmlFor="nombre_evento">Nombre del evento</label>
+                    <input type="text" id="nombre_evento" name="title"></input>
+
+
+                    <label htmlFor="descripcion_evento">Descripción</label>
+                    <input type="text" id="descripcion_evento" name="description"></input>
+
+
+                    <label htmlFor="distrito_evento">Distrito</label>
+                    <input type="text" id="distrito_evento" name="district"></input>
+
+
+                    <label htmlFor="calle_evento">Calle</label>
+                    <input type="text" id="calle_evento" name="street"></input>
+
+
+                    <label htmlFor="inicio_evento">Fecha de inicio</label>
+                    <input type="date" id="inicio_evento" name="startDate"></input>
+
+
+                    <label htmlFor="fin_evento">Fecha fin</label>
+                    <input type="date" id="fin_evento" name="endDate"></input>
+
+
+                    <label htmlFor="precio_evento">Precio</label>
+                    <input type="text" id="precio_evento" name="price"></input>
+
+
+                    <label htmlFor="capacidad_evento">Capacidad Máxima</label>
+                    <input type="text" id="capacidad_evento" name="maxCapacity"></input>
+
+
+                    <label htmlFor="telefono_evento">Teléfono para contacto</label>
+                    <input type="text" id="telefono_evento" name="contactPhone"></input>
+
+
+                    <label htmlFor="coordenada_X_evento">Coordenada X del lugar del evento</label>
+                    <input type="text" id="coordenada_X_evento" name="xCoordinate"></input>
+
+
+                    <label htmlFor="coordenada_Y_evento">Coordenada Y del lugar del evento</label>
+                    <input type="text" id="coordenada_Y_evento" name="yCoordinate"></input>
+
+
+                    <input type="submit" class="btn-submit"></input>
+
+                  </div>
+                </form>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="floating-panel">
-      <a id="drop" onclick="drop()" class="btn-floating">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="change2"
-          ><i class="fa fa-search-location"></i> eventos</span
-        >
-      </a>
-    </div>
-    <div id="map"></div>
-
+    
     <script>
       if (window.location.hash == "#_=_") {
         window.location.hash = "";
@@ -184,5 +402,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/menu.js"></script>
+    <script src="/js/popup-crear.js"></script>
+    <script src="/js/popup-editar.js"></script>
   </body>
 </html>

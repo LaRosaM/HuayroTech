@@ -8,12 +8,12 @@ async function getEvent(req, res, next) {
 
 async function getEvents(req, res, next) {
     const events = await Event.find({});
-    res.status(200).json(events);
+    return events;
 }
 
 async function postEvent(req, res, next) {
-    const { title, description, district, street, startDate, endDate, price, maxCapacity, creationDate } = req.body;
-    const newEvent = new Event({ title, description, district, street, startDate, endDate, price, maxCapacity, creationDate });
+    const { title, description, district, street, startDate, endDate, price, maxCapacity, contactPhone, xCoordinate, yCoordinate, creationDate } = req.body;
+    const newEvent = new Event({ title, description, district, street, startDate, endDate, price, maxCapacity, contactPhone, xCoordinate, yCoordinate, creationDate });
     await newEvent.save();
     req.flash('success_msg', 'Evento registrado satisfactoriamente');
     res.redirect('/');

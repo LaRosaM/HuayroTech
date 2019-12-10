@@ -23,6 +23,10 @@ router.post('/register', user.register);
 
 router.get('/register', (req, res) => {
     res.render('register')
+});
+
+router.get('/profile', (req, res) => {
+    res.render('profile')
 })
 
 /* SIGNIN user */

@@ -6,21 +6,13 @@ var neighborhoods = [
 		index: 0, lat: -12.062283, lng: -76.994354, content: '<div id="content">' +
 			'<div id="siteNotice">' +
 			'</div>' +
-			'<h1 id="firstHeading" class="firstHeading">Evento 1</h1>' +
+			'<h1 id="firstHeading" class="firstHeading">Perú Ska Festival</h1>' +
 			'<div id="bodyContent">' +
-			'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-			'sandstone rock formation in the southern part of the ' +
-			'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
-			'south west of the nearest large town, Alice Springs; 450&#160;km ' +
-			'(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
-			'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
-			'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
-			'Aboriginal people of the area. It has many springs, waterholes, ' +
-			'rock caves and ancient paintings. Uluru is listed as a World ' +
-			'Heritage Site.</p>' +
-			'<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-			'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-			'(last visited June 22, 2009).</p>' +
+			'<p> En nuestro país la influencia del ska se encuentra presente en muchas bandas o agrupaciones ' +
+			'locales de diversas ciudades del país. Luego de las 3 exitosas ediciones del Lima Ska Festival.</p>' +
+			'<p>Attribution: <a href="https://www.google.com/">' +
+			'Ska Festival</a> ' +
+			'sáb., 16 nov. 18:00–dom</p>' +
 			'</div>' +
 			'</div>'
 	},
@@ -28,21 +20,15 @@ var neighborhoods = [
 		index: 1, lat: -12.060261, lng: -76.993825, content: '<div id="content">' +
 			'<div id="siteNotice">' +
 			'</div>' +
-			'<h1 id="firstHeading" class="firstHeading">Evento 2</h1>' +
+			'<h1 id="firstHeading" class="firstHeading">Get Out Festival</h1>' +
 			'<div id="bodyContent">' +
-			'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-			'sandstone rock formation in the southern part of the ' +
-			'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
-			'south west of the nearest large town, Alice Springs; 450&#160;km ' +
-			'(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
-			'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
-			'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
-			'Aboriginal people of the area. It has many springs, waterholes, ' +
-			'rock caves and ancient paintings. Uluru is listed as a World ' +
-			'Heritage Site.</p>' +
-			'<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-			'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-			'(last visited June 22, 2009).</p>' +
+			'<p> Te invitamos a escapar del tráfico, del jefe abusivo, del profesor aburrido, '+
+			'de los amigos sin ganas de divertirse, del curso que no entiendes, de todo lo que tienes '+
+			'que hacer pero no te gusta. Escápate con nosotros a un mundo donde la música suena alto, '+
+			'la sorpresa es permanente y los recuerdos imborrables nacen.</p>' +
+			'<p>Attribution: <a href="https://www.google.com/">' +
+			'Get Out Festival</a> ' +
+			'sáb., 23 dic. 18:00–dom</p>' +
 			'</div>' +
 			'</div>'
 	},
@@ -50,21 +36,16 @@ var neighborhoods = [
 		index: 2, lat: -12.060911, lng: -76.997097, content: '<div id="content">' +
 			'<div id="siteNotice">' +
 			'</div>' +
-			'<h1 id="firstHeading" class="firstHeading">Evento 3</h1>' +
+			'<h1 id="firstHeading" class="firstHeading">Aero Expo Perú</h1>' +
 			'<div id="bodyContent">' +
-			'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-			'sandstone rock formation in the southern part of the ' +
-			'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
-			'south west of the nearest large town, Alice Springs; 450&#160;km ' +
-			'(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
-			'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
-			'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
-			'Aboriginal people of the area. It has many springs, waterholes, ' +
-			'rock caves and ancient paintings. Uluru is listed as a World ' +
-			'Heritage Site.</p>' +
-			'<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-			'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-			'(last visited June 22, 2009).</p>' +
+			'<p>El Aero Expo Perú en Lima es una feria para la aviación comercial y turístico. '+
+			'Esta exposición es la plataforma de la comunicación y de la información en la industria '+
+			'y ofrece a las empresas expositoras la oportunidad de presentar a una audiencia de expertos aquí. '+
+			'Los visitantes pueden encontrar en la profundidad y la amplia información aquí sobre las últimas novedades, '+
+			'tendencias, productos y servicios en diversos campos.</p>' +
+			'<p>Attribution: <a href="https://www.google.com/">' +
+			'Aero Expo Perú</a> ' +
+			'sáb., 23 dic. 18:00–dom</p>' +
 			'</div>' +
 			'</div>'
 	},
@@ -72,21 +53,14 @@ var neighborhoods = [
 		index: 3, lat: -12.061614, lng: -76.993181, content: '<div id="content">' +
 			'<div id="siteNotice">' +
 			'</div>' +
-			'<h1 id="firstHeading" class="firstHeading">Evento 4</h1>' +
+			'<h1 id="firstHeading" class="firstHeading">Kapital 2.5</h1>' +
 			'<div id="bodyContent">' +
-			'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-			'sandstone rock formation in the southern part of the ' +
-			'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
-			'south west of the nearest large town, Alice Springs; 450&#160;km ' +
-			'(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
-			'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
-			'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
-			'Aboriginal people of the area. It has many springs, waterholes, ' +
-			'rock caves and ancient paintings. Uluru is listed as a World ' +
-			'Heritage Site.</p>' +
-			'<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-			'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-			'(last visited June 22, 2009).</p>' +
+			'<p>Kapital 2.5 regresa con nuevas historias que muestran, de forma muy irónica, '+
+			'la realidad a la que los políticos y autoridades someten a la población, lo que genera '+
+			'un ambiente de violencia.</p>' +
+			'<p>Attribution: <a href="https://www.google.com/">' +
+			'Kapital 2.5</a> ' +
+			'sáb., 23 dic. 18:00–dom</p>' +
 			'</div>' +
 			'</div>'
 	},
@@ -94,21 +68,14 @@ var neighborhoods = [
 		index: 4, lat: -12.063639, lng: -76.994222, content: '<div id="content">' +
 			'<div id="siteNotice">' +
 			'</div>' +
-			'<h1 id="firstHeading" class="firstHeading">Evento 5</h1>' +
+			'<h1 id="firstHeading" class="firstHeading"> VIVO X EL ROCK 2019 </h1>' +
 			'<div id="bodyContent">' +
-			'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-			'sandstone rock formation in the southern part of the ' +
-			'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
-			'south west of the nearest large town, Alice Springs; 450&#160;km ' +
-			'(280&#160;mi) by road. Kata Tjuta and Uluru are the two major ' +
-			'features of the Uluru - Kata Tjuta National Park. Uluru is ' +
-			'sacred to the Pitjantjatjara and Yankunytjatjara, the ' +
-			'Aboriginal people of the area. It has many springs, waterholes, ' +
-			'rock caves and ancient paintings. Uluru is listed as a World ' +
-			'Heritage Site.</p>' +
+			'<p>Esta nueva versión del festival más importante del país, se presentará'+
+			' a la reconocida banda de indie rock The Strokes como el primer headliner de su Line Up.</p>' +
 			'<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-			'https://en.wikipedia.org/w/index.php?title=Uluru</a> ' +
-			'(last visited June 22, 2009).</p>' +
+			'<p>Attribution: <a href="https://www.google.com/">' +
+			'VIVO X EL ROCK 2019</a> ' +
+			'sáb., 23 nov. 18:00–dom</p>' +
 			'</div>' +
 			'</div>'
 	}
@@ -117,12 +84,14 @@ var neighborhoods = [
 var markers = [];
 var map;
 var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-var positionActual;
-
+var indexPosActual = 0;
+var drop = document.getElementById('drop');
 
 
 function initMap() {
+	
 	if (navigator.geolocation) {
+		
 		navigator.geolocation.getCurrentPosition((position) => {
 			positionActual = position.coords;
 
@@ -133,6 +102,7 @@ function initMap() {
 				mapTypeId: 'terrain'
 			});
 
+			console.log(map)
 			/*===================== Creamos el marcador de la ubicacion actual =====================*/
 
 			// Adds a marker at the center of the map.
@@ -174,7 +144,6 @@ function initMap() {
 
 
 function addMarker(location, type, efect) {
-
 	if (type == "ubicacion") {
 		if (efect) {
 			var marker = new google.maps.Marker({
@@ -207,6 +176,7 @@ function addMarker(location, type, efect) {
 		});
 	}
 	if (type == "evento") {
+
 		if (efect) {
 			var marker = new google.maps.Marker({
 				position: location,
@@ -222,22 +192,20 @@ function addMarker(location, type, efect) {
 			});
 		}
 		markers.push(marker);
+
+		var contentPopUp = location.content;
+
 		marker.addListener('click', function () {
-			var contentPopUp = '<div id="content">' +
-				'<div id="siteNotice">' +
-				'</div>' +
-				'<h1 id="firstHeading" class="firstHeading">Evento Nuevo</h1>' +
-				'<div id="bodyContent">' +
-				'<p><b>Evento Nuevo</b>, Esta es la ubicación' +
-				'<br>disfruta de los eventos cercanos a ti.</p>' +
-				'(Last visited Setiembre 20, 2019).</p>' +
-				'</div>' +
-				'</div>';
+			indexPosActual  = location.index;
+			document.getElementById('posActual').value = indexPosActual;
+			
+			//alert(indexPosActual)
+			//var contentPopUp = contenido;
 			new google.maps.InfoWindow({
 				content: contentPopUp
 			}).open(map, this);
 		});
-		
+
 	}
 
 }
@@ -288,17 +256,19 @@ function deleteMarkers() {
 	markers = [];
 }
 
-function drop() {
+drop.addEventListener("click", function(){
+
 	clearMarkers();
+	
 	for (var i = 0; i < neighborhoods.length; i++) {
 		console.log(neighborhoods[i]);
 		addMarkerWithTimeout(neighborhoods[i], i * 200);
 	}
-}
-
+});
 
 function addMarkerWithTimeout(neighborhood, timeout) {
 	window.setTimeout(function () {
+		console.log(neighborhoods);
 		addMarker(neighborhood, "evento", true);
 	}, timeout);
 }

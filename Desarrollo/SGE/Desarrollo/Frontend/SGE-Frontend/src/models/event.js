@@ -12,6 +12,9 @@ const eventSchema = new Schema({
     endDate: { type: Date, default: Date.now },
     price: { type: mongoose.Decimal128, require: true },
     maxCapacity: { type: Number, required: true },
+    contactPhone: {type: String, required: true},
+    xCoordinate: {type: String, required: true},
+    yCoordinate: {type: String, required: true},
     creationDate: { type: Date, default: Date.now }
 });
 
