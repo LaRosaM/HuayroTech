@@ -1,0 +1,24 @@
+.form-w-300 {
+    width: 300px;
+  }
+  
+  #box {
+    margin-top: 7rem;
+  }
+  
+  .bg-darkblue {
+    background-color: #254b8f;
+    color: #fff;
+  }
+  
+  .bg-ocre {
+    background-color: #debb07;
+    color: #fff;
+  }
+  
+  .btn:focus {
+    box-shadow: none;
+  }
+  .form-control:focus {
+    box-shadow: none;
+  }

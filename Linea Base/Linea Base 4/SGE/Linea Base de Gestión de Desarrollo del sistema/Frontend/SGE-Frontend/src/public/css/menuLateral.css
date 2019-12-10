@@ -1,0 +1,258 @@
+.menu-lateral {
+  position: relative;
+  /*width: 28%;*/
+  width: calc(0% + 22px);
+  transition: width 0.2s;
+  transition-timing-function: linear;
+  z-index: 6;
+}
+
+.visible {
+  width: 408px;
+}
+
+.menu {
+  position: absolute;
+  width: calc(100% - 22px);
+  height: 100vh;
+  background: #ffffff;
+  overflow-y: auto;
+  margin: 0%;
+  padding: 0px;
+}
+
+.menu-lateral .menu::-webkit-scrollbar {
+  background: #fff;
+  width: 7px;
+}
+.menu-lateral .menu::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 15px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.menu-lateral .menu::-webkit-scrollbar-thumb:hover {
+  background: rgb(177, 145, 145);
+}
+
+@media screen and (max-width: 750px) {
+  .visible {
+    width: 70%;
+  }
+}
+
+.btn-trigger {
+  position: absolute;
+  display: block;
+  width: 22px;
+  height: 50px;
+  right: 0;
+  top: 20px;
+  background: #ccc;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(184, 182, 182);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-trigger i {
+  /* position: absolute;
+    top: 25%;
+    left: 25%;*/
+  display: block;
+  margin-top: 60%;
+  font-size: 22px;
+}
+
+/*CONTENIDO DEL MENU LATERAL*/
+
+.menu-lateral .menu .contenido {
+  padding: 0px;
+  margin-top: 0px;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  background: #fff;
+}
+
+.menu-lateral .menu .contenido .header-contenido {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 240px;
+}
+
+.menu-lateral .menu .contenido .header-contenido a {
+  color: #bd6939;
+}
+
+.menu-lateral .menu .contenido .header-contenido .hidden {
+  visibility: hidden;
+}
+
+.menu-lateral .menu .contenido .header-contenido .visible {
+  visibility: visible;
+}
+
+.menu-lateral .menu .contenido .header-contenido .evento {
+  background: #fff;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 15px;
+  color: #351f6e !important;
+  position: absolute;
+  top: 0px;
+  left: 5%;
+  z-index: 7;
+  width: 80%;
+  text-align: center;
+  -webkit-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 12px 0px rgba(0, 0, 0, 0.75);
+  font-family: "Courier New", Courier, monospace;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.menu-lateral .menu .contenido .header-contenido img {
+  width: 100%;
+  height: 240px;
+  position: absolute;
+  top: 0%;
+  z-index: 6;
+}
+
+.menu-lateral .menu .contenido .descripcion-contenido {
+  margin-top: 250px;
+  padding: 10px;
+  padding-top: 0px;
+  padding-left: 15px;
+}
+
+.menu-lateral .menu .contenido .descripcion-contenido h1 {
+  padding-top: 15px;
+  margin: 0px;
+  font-size: 18px !important;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+
+.score {
+  display: flex;
+  margin: 0px;
+}
+
+.score .puntaje {
+  margin-right: 25px;
+}
+
+#form {
+  width: 50px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  color: grey;
+  cursor: pointer;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+hr {
+  width: 100%;
+  margin: 0px;
+}
+
+.datos {
+  margin-top: 15px;
+}
+.datos .data {
+  width: 100%;
+  display: flex;
+  margin: 15px auto;
+}
+.datos .data i {
+  height: 15px;
+  margin-right: 15px;
+  color: #4285f4;
+}
+.datos .data p {
+  margin: 0px;
+}
+
+.btnn {
+  display: block;
+  margin: 15px auto;
+  margin-top: 20px;
+  background: #000;
+  color: #fff;
+  width: 100px;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 5;
+  color: #fff;
+  padding: 15px 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 10px #0c002b;
+  overflow: hidden;
+  background: #351f6e; /*#*/
+  font-size: 14px;
+  cursor: pointer;
+}
+.btnn:hover {
+  background: #4285f4;
+  color: #fff;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.comentarios .nombre {
+  display: flex;
+  justify-content: space-between;
+}
+.comentarios .comentario p {
+  margin-top: 0px;
+}
+.crear {
+  display: block;
+  text-decoration: none;
+  color: rgb(115, 101, 136);
+  margin-top: 25px;
+}
+.crear:hover{
+  text-decoration: none;
+}
+.crear i {
+  margin-left: 5px;
+}
