@@ -1,5 +1,4 @@
-const socket = io();
-
+	const socket = io();
 
 var neighborhoods = [
 	{
@@ -81,15 +80,25 @@ var neighborhoods = [
 	}
 ];
 
+var prueba = [];
+var eventos = [];
+function datos(){
+	
+	fetch('http://jsonplaceholder.typicode.com/users')
+	  .then(res => res.json())
+	  .then(data => eventos = data)
+	  .then(() => console.log(eventos));
+}
+
 var markers = [];
 var map;
 var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
 var indexPosActual = 0;
-var drop = document.getElementById('drop');
+//var drop = document.getElementById('drop');
 
 
 function initMap() {
-	
+	datos();
 	if (navigator.geolocation) {
 		
 		navigator.geolocation.getCurrentPosition((position) => {
@@ -255,20 +264,22 @@ function deleteMarkers() {
 	clearMarkers();
 	markers = [];
 }
-
+/*
 drop.addEventListener("click", function(){
 
 	clearMarkers();
 	
 	for (var i = 0; i < neighborhoods.length; i++) {
-		console.log(neighborhoods[i]);
+		//console.log(neighborhoods[i]);
 		addMarkerWithTimeout(neighborhoods[i], i * 200);
+		console.log("RESULTADO QUE FUNCIONA AJAX");
+		console.log(obj);
 	}
 });
-
+*/
 function addMarkerWithTimeout(neighborhood, timeout) {
 	window.setTimeout(function () {
-		console.log(neighborhoods);
+		//console.log(neighborhoods);
 		addMarker(neighborhood, "evento", true);
 	}, timeout);
 }

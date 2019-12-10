@@ -12,6 +12,11 @@ const app = express();
 const path = require('path');
 const server = http.createServer(app);
 const io = socketIO(server);
+const methodOverride = require('method-override');
+const session = require('express-session');
+
+//DB initialization
+require('./database');
 
 //sockets
 require('./sockets')(io);
@@ -19,20 +24,22 @@ require('./sockets')(io);
 // settings
 app.set('port', process.env.PORT || 3000);
 
-// middlwares
+// middlewares
 app.use(webpackDevMiddleware(webpack(webpackConfig)));
+app.use(methodOverride('_method'));
+app.use(session({
+  secret: 'mysecretkey',
+  resave: true,
+  saveUninitialized: true
+}));
 
 // static files
 app.use(express.static(path.join(__dirname, 'public'))); //Como no encuentra la ruta la vamos a setear con la direccion global
 
 // routes
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
-
-app.get('/api', (req, res) => {
-  res.json({api: 'works!'});
-});
+app.use(require('./routers/'));
+app.use(require('./routers/evento'));
+app.use(require('./routers/user'));
 
 // starting the server
 server.listen(app.get('port'), () => {

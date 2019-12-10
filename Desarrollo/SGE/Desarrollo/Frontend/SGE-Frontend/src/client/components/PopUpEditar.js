@@ -6,6 +6,23 @@ class PopUpEditar extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+        };
+
+        this.CerrarPopup_editar = this.CerrarPopup_editar.bind(this);
+    }
+
+    CerrarPopup_editar() {
+
+        var AbrirPopup = document.getElementById('abrir-popup'),
+            overlay = document.getElementById('overlay'),
+            popUp = document.getElementById('popup'),
+            btnCerrarPopUp = document.getElementById('btn-cerrar-popup');
+
+            overlay.classList.remove('active');
+            popUp.classList.remove('active');
+
     }
 
 
@@ -15,7 +32,7 @@ class PopUpEditar extends Component {
 
                 <div className="overlay" id="overlay">
                     <div className="popup" id="popup">
-                        <a href="#" id="btn-cerrar-popup" className="btn-cerrar-popup"><i className="fas fa-times"></i></a>
+                        <a href="#" id="btn-cerrar-popup" className="btn-cerrar-popup" onClick={this.CerrarPopup_editar}><i className="fas fa-times"></i></a>
                         <div className="container1">
                             <div className="container">
                                 <h1>Editar Campos</h1>

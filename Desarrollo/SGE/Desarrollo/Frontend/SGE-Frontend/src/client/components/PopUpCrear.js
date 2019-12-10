@@ -6,15 +6,31 @@ class PopUpCrear extends Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+    };
+
+    this.CerrarPopup_crear = this.CerrarPopup_crear.bind(this);
   }
 
+  CerrarPopup_crear() {
+
+    var AbrirPopup_crear = document.getElementById('abrir-popup-crear'),
+      overlay_crear = document.getElementById('overlay-crear'),
+      popUp_crear = document.getElementById('popup-crear'),
+      btnCerrarPopUp_crear = document.getElementById('btn-cerrar-popup-crear');
+
+      overlay_crear.classList.remove('active');
+      popUp_crear.classList.remove('active');
+
+  }
 
   render() {
     return (
       <div>
         <div className="overlay" id="overlay-crear">
           <div className="popup" id="popup-crear">
-            <a href="#" id="btn-cerrar-popup-crear" className="btn-cerrar-popup"><i className="fas fa-times"></i></a>
+            <a href="#" id="btn-cerrar-popup-crear" className="btn-cerrar-popup" onClick={this.CerrarPopup_crear}><i className="fas fa-times"></i></a>
             <div className="container1">
               <div className="container">
                 <h1>Crear Evento</h1>

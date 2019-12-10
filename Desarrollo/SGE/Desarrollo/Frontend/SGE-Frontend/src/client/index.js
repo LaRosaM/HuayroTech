@@ -7,6 +7,7 @@ const title = 'Webpack React Setup';
 console.log(title);
 
 render(
+    
     <div >
         <App />
     </div>,

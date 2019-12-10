@@ -6,7 +6,9 @@ import { render } from 'react-dom';
 import MenuLateral from './MenuLateral';
 import PopUpCrear from './PopUpCrear';
 import PopUpEditar from './PopUpEditar';
+import Map from './Map';
 
+import Login from './Login';
 
 // Styles
 import '../../public/css/main.css';
@@ -17,6 +19,7 @@ import '../../public/css/popup.css';
 
 class App extends Component {
 
+
   constructor(props) {
 
     super(props);
@@ -26,7 +29,9 @@ class App extends Component {
         title: 'My First component',
         done: true
       },
-      indexPosActual: 0
+      indexPosActual: 0,
+      events: [],
+      isLoggedIn: false
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -34,40 +39,45 @@ class App extends Component {
 
 
   handleClick() {
-    const task = this.state.task;
-    task.done = !task.done;
     this.setState({
-      task
+      isLoggedIn: true
     });
   }
 
+  componentDidMount() {
+    fetch('http://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then((data) => {
+        this.setState({ events: data })
+      })
+      .catch(console.log);
+  }
+
   render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    if (isLoggedIn) {
+
+      return (
+
+        <div style={{
+          margin: 0,
+          padding: 0
+        }}>
+
+          <Map />
+
+        </div>
+      )
+    }
+
     return (
+
       <div style={{
         margin: 0,
         padding: 0
       }}>
-
-        <input type="hidden" id="posActual" name="posActual"></input>
-
-        <MenuLateral />
-
-        <div id="floating-panel">
-          <a id="drop" className="btn-floating">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span className="change2"><i className="fa fa-search-location"></i> eventos</span>
-          </a>
-        </div>
-        <div id="map" ></div>
-
-
-        <PopUpEditar />
-
-        <PopUpCrear />
-
+        <Login />
+        <button onClick={this.handleClick} >Iniciar</button>
       </div>
     )
   }

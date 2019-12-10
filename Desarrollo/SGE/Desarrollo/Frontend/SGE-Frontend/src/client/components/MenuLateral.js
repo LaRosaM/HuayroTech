@@ -8,16 +8,60 @@ class MenuLateral extends Component {
         super(props);
 
         this.state = {
-            indexPosActual: 0
+            indexPosActual: 0,
+            isVisible: false
         };
+
+        this.AbrirPopup_crear = this.AbrirPopup_crear.bind(this);
+        this.AbrirPopup_editar = this.AbrirPopup_editar.bind(this);
 
         this.handleClick = this.handleClick.bind(this);
     }
 
+    componentDidMount() {
+
+    }
+
+    AbrirPopup_crear() {
+
+        var AbrirPopup_crear = document.getElementById('abrir-popup-crear'),
+            overlay_crear = document.getElementById('overlay-crear'),
+            popUp_crear = document.getElementById('popup-crear'),
+            btnCerrarPopUp_crear = document.getElementById('btn-cerrar-popup-crear');
+
+        overlay_crear.classList.add('active');
+        popUp_crear.classList.add('active');
+
+    }
+
+    AbrirPopup_editar() {
+
+        var AbrirPopup = document.getElementById('abrir-popup'),
+            overlay = document.getElementById('overlay'),
+            popUp = document.getElementById('popup'),
+            btnCerrarPopUp = document.getElementById('btn-cerrar-popup');
+
+        overlay.classList.add('active');
+        popUp.classList.add('active');
+
+    }
 
     handleClick() {
+        var isVisible = this.state.isVisible;
+
+        var menuToggle = document.getElementById("menuToggle");
+
+        if (!isVisible) {
+            menuToggle.className += " visible";
+            isVisible = !isVisible;
+        } else {
+            menuToggle.className = "menu-lateral";
+            isVisible = !isVisible;
+        }
+
         this.setState({
-            indexPosActual: document.getElementById("posActual").value
+            indexPosActual: document.getElementById("posActual").value,
+            isVisible: isVisible
         });
     }
 
@@ -25,11 +69,11 @@ class MenuLateral extends Component {
         return (
             <div>
                 <div className="menu-lateral" id="menuToggle">
-                    <a href="#" id="iconToggle" className="btn-trigger" onClick={this.handleClick.bind(this)}><i className="fa fa-caret-left"></i></a>
+                    <a href="#" id="iconToggle" className="btn-trigger" onClick={this.handleClick}><i className="fa fa-caret-left"></i></a>
                     <div className="menu">
                         <div className="contenido">
                             <div className="header-contenido">
-                                <h1> {this.state.indexPosActual} Reunión de organización HuayroTech  <a href="#" className="visible" id="abrir-popup"><i className="fa fa-pencil-alt"></i></a></h1>
+                                <h1> {this.state.indexPosActual} Reunión de organización HuayroTech  <a href="#" className="visible" id="abrir-popup" onClick={this.AbrirPopup_editar}><i className="fa fa-pencil-alt"></i></a></h1>
                                 <img type="image/jpg" src="/img/evento.jpg" alt="asd"></img>
                             </div>
 
@@ -141,7 +185,7 @@ class MenuLateral extends Component {
                                 </div>
                                 <a href="#" className="btn">ASISTIR</a>
 
-                                <a href="#" id="abrir-popup-crear" className="crear">Crear mi evento <i className="fa fa-pencil-alt"></i></a>
+                                <a href="#" id="abrir-popup-crear" className="crear" onClick={this.AbrirPopup_crear}>Crear mi evento <i className="fa fa-pencil-alt"></i></a>
                             </div>
 
                         </div>
