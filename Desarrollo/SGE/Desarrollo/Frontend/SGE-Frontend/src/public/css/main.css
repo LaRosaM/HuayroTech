@@ -2,11 +2,7 @@
        * element that contains the map. */
 
 #map {
-<<<<<<< HEAD
   height: 94vh;
-=======
-    height: 100vh;
->>>>>>> LaRosaM
 }
 
 /* Optional: Makes the sample page fill the window. */
@@ -152,19 +148,10 @@ body {
 }
 
 @keyframes animate4 {
-<<<<<<< HEAD
   0% {
     transform: translateY(100%);
   }
   100% {
     transform: translateY(-100%);
   }
-=======
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
->>>>>>> LaRosaM
 }
